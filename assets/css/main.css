@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.c-0 {
+    display: none;
+}
+
+.c-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+}
+
+.c-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+
+.c-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.c-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.c-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+}
+
+.c-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.c-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+}
+
+.c-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+
+.c-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.c-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
+
+.c-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+}
+
+.c-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.jc-center
+{
+    justify-content: center;
+}
+html{
+    font-size: 10px;    
+}
+#header{
+    display: flex;
+    position: relative;
+}
+#header .nav
+{
+    min-width: 1140px;
+    margin: auto;
+    background-color: #4CAF50;
+}
+#header .nav .nav__list{
+    display: flex;    
+    justify-content: center;    
+}
+#header .nav .nav__item
+{
+    list-style-type: none; 
+    padding: 12px 20px;  
+}
+
+#header .nav .nav__item a{
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+#header .nav .nav__item:hover a{
+    font-weight: 700;    
+}
+#header .nav .nav__item:hover
+{
+  background-color:#e7e427 ;
+}
+
+#search .searchBlock
+{
+  min-width: 1140px;
+  margin: auto;
+}
+.search__btn
+{
+  text-align: center;
+  font-size:30px;
+  color: #000;
+  font-weight: 700;
+}
+.search__form
+{
+  width: 100%;
+  margin: auto;
+  min-height: 50px;
+  padding:0 30px;
+  font-size:25px;
+}
+
+
+#content,#search
+{
+    display: flex;
+    margin-top: 30px;
+}
+#search,.btnSearchBooks,
+.btnSearchCate, .btnSearchCus,
+.btnSearchOrder
+{
+  display:none;
+}
+#content .container 
+{
+    min-width: 1140px;
+    margin: auto;
+}
+#content .content__table, .content__tableDetail
+{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 16px;
+}
+#content .content__table td,
+#content .content__table th,
+#content .content__tableDetail td,
+#content .content__tableDetail th
+{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-shadow: 0 0 0px #000;
+    text-align: center;
+}
+#content .content__table tr:nth-child(even),
+#content .content__tableDetail tr:nth-child(even)
+{   
+    background-color: #f2f2f2;
+}
+#content .content__table tr:hover ,
+#content .content__tableDetail tr:hover 
+{
+    background-color: #ddd;
+}
+#content .content__table th ,
+#content .content__tableDetail th
+{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+#content .content__table th:last-child,
+#content .content__tableDetail th:last-child
+{
+  width: 250px;
+}
+.btn__group
+{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    flex: 1;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 4px;
+    border-radius: 4px;
+}
+.btn p,.btn--add,.btn--BackOrder
+{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0 0 1px #000;
+}
+.btn--add,.btn--BackOrder
+{
+  display: none;
+  margin-bottom: 3px;
+}
+.btn:hover
+{
+    opacity: 0.7;
+}
+.meta
+{
+    width: 255px;
+    display: flex;
+    float: right;
+}
+.content__title
+{
+    font-size: 3.6rem;
+    text-align: center;
+    color: #4CAF50;
+}
+
+
+.overlay-book,.overlay-cate,.overlay-cus,
+.overlay-order,.overlay-orderDetail
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.close,.closeCate,.closeCus,.closeOr,.closeOrDt
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.form__add,.form__addCate,.form__addCus,.form__addOr,.form__addOrDt
+{
+    background-color: #fff;
+    margin: auto;
+    min-width: 1000px;
+    position: relative;
+}
+.form__add .form__item, .form__addCate .form__item,.form__addCus .form__item
+,.form__addOr .form__item,.form__addOrDt .form__item
+{
+    padding: 12px;
+    font-size: 1.2rem;
+}
+
+
+.form-control,
+#categoryId
+{
+    padding: 4px;
+    width: 80%;
+}
+
+/* ======= Toast message ======== */
+
+#toast ,#toastCate
+{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999;
+}
+  
+  .toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(calc(100% + 32px));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .toast--success {
+    border-color: #47d864;
+  }
+  
+  .toast--success .toast__icon {
+    color: #47d864;
+  }
+  
+  .toast--info {
+    border-color: #2f86eb;
+  }
+  
+  .toast--info .toast__icon {
+    color: #2f86eb;
+  }
+  
+  .toast--warning {
+    border-color: #ffc021;
+  }
+  
+  .toast--warning .toast__icon {
+    color: #ffc021;
+  }
+  
+  .toast--error {
+    border-color: #ff623d;
+  }
+  
+  .toast--error .toast__icon {
+    color: #ff623d;
+  }
+  
+  .toast + .toast {
+    margin-top: 24px;
+  }
+  
+  .toast__icon {
+    font-size: 24px;
+  }
+  
+  .toast__icon,
+  .toast__close {
+    padding: 0 16px;
+  }
+  
+  .toast__body {
+    flex-grow: 1;
+  }
+  
+  .toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  
+  .toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }

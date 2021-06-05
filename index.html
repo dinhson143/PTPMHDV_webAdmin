@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mua Bán Sách</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section id="header">
+        <div class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--detailOr">
+                    <a href="#">TRANG CHỦ</a>
+                </li>
+                <li class="nav__item  nav__item--book">
+                    <a href="">Book</a>
+                </li>
+                <li class="nav__item nav__item--cate">
+                    <a href="">Category</a>
+                </li>
+                <li class="nav__item nav__item--cus">
+                    <a href="">Customer</a>
+                </li>
+                <li class="nav__item nav__item--order">
+                    <a href="">Order</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="search">
+        <div class="searchBlock">
+            <div class="search__btn">
+                Tìm Kiếm
+            </div>
+            <input type="text" class="search__form btnSearchBooks">
+            <input type="text" class="search__form btnSearchCate ">
+            <input type="text" class="search__form btnSearchCus">
+            <input type="text" class="search__form btnSearchOrder">
+        </div>
+    </section>
+    <section id="content">
+        <div class="container">
+            <h1 class="content__title"></h1>
+            <div class="meta">
+                <div class="btn btn--add">
+                    Add new
+                </div>
+                <div class="btn btn--BackOrder">
+                    Back
+                </div>
+            </div>
+            <table class="content__table">
+
+            </table>
+            <table class="content__tableDetail">
+
+            </table>
+        </div>
+    </section>
+    <div class="overlay-book">
+        <div class="form__add">
+            <label class="close" for="check_add">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </label>
+            <h2 class="content__title">Add New Book</h2>
+            <form action="">
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Title</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Title" id="bookTitle">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Year</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required min="1" type="number" placeholder="Year" id="bookYear">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Price</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required min="1" type="number" placeholder="Price" id="bookPrice">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Book Decription</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Book Decription"
+                            id="bookDecription">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Publishing Company</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Publishing Company"
+                            id="bookPublishingCompany">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Author</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Author" id="bookAuthor">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Category ID</h4>
+                    </div>
+                    <div class="col c-9">
+                        <select name="categoryId" required id="bookCategoryId">
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Image</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="file" placeholder="Image" id="bookImage">
+                        <img id="imageEdit" style="width: 100px; height: 100px"/>
+                    </div>
+                </div>
+                <div class="row form__item jc-center">
+                    <input type="submit" value="Add new" id="add-new" class="btn">
+                </div>
+            </form>
+        </div>
+        <div id="toastBook"></div>
+    </div>
+    <div class="overlay-cate">
+        <div class="form__addCate">
+            <label class="closeCate" for="check_add">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </label>
+            <h2 class="content__title">Add New Category</h2>
+            <form action="">
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Title</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Title" id="cateTitle">
+                    </div>
+                </div>
+                <div class="row form__item jc-center">
+                    <input type="submit" value="Add new" id="add-newCate" class="btn">
+                </div>
+            </form>
+        </div>
+        <div id="toastCate"></div>
+    </div>
+    <div class="overlay-cus">
+        <div class="form__addCus">
+            <label class="closeCus" for="check_add">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </label>
+            <h2 class="content__title">Add New Customer</h2>
+            <form action="">
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Name</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Title" id="cusName">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Email</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Title" id="cusEmail">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Address</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Title" id="cusAdd">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Role</h4>
+                    </div>
+                    <div class="col c-9">
+                        <select name="categoryId" required id="cusRole">
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Password</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Password" id="cusPass">
+                    </div>
+                </div>
+                <div class="row form__item jc-center">
+                    <input type="submit" value="Add new" id="add-newCus" class="btn">
+                </div>
+            </form>
+        </div>
+        <div id="toastCus"></div>
+    </div>
+    <div class="overlay-order">
+        <div class="form__addOr">
+            <label class="closeOr" for="check_add">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </label>
+            <h2 class="content__title">Add New Order</h2>
+            <form action="">
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>CustomerID</h4>
+                    </div>
+                    <div class="col c-9">
+                        <select name="CusID" style="width:80% ; height: 30px;" required id="orderCusID">
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Address</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Địa chỉ" id="orderAdd">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Status</h4>
+                    </div>
+                    <div class="col c-9">
+                        <select name="categoryId" required id="orderStatus">
+                            <option value="Chờ xác nhận">Chờ xác nhận</option>
+                            <option value="Đã tiếp nhận">Đã tiếp nhận</option>
+                            <option value="Đang giao hàng">Đang giao hàng</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form__item jc-center">
+                    <input type="submit" value="Add new" id="add-newOr" class="btn">
+                </div>
+            </form>
+        </div>
+        <div id="toastOr"></div>
+    </div>
+    <div class="overlay-orderDetail">
+        <div class="form__addOrDt">
+            <label class="closeOrDt" for="check_add">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </label>
+            <h2 class="content__title">Add New OrderDetail</h2>
+            <form action="">
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>OrderID</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="OrderID" id="orID">
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>BookID</h4>
+                    </div>
+                    <div class="col c-9">
+                        <select name="bID" style="width:80% ; height: 30px;" id="bID">
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form__item">
+                    <div class="col c-3">
+                        <h4>Quantity</h4>
+                    </div>
+                    <div class="col c-9">
+                        <input class="form-control" required type="text" placeholder="Quantity" id="quantity">
+                    </div>
+                </div>
+                <div class="row form__item jc-center">
+                    <input type="submit" value="Add new" id="add-newOrDt" class="btn">
+                </div>
+            </form>
+        </div>
+        <div id="toastOr"></div>
+    </div>
+    <script src="./assets/javascript/main.js"></script>
+    <script src="./assets/javascript/category.js"></script>
+    <script src="./assets/javascript/customer.js"></script>
+    <script src="./assets/javascript/order.js"></script>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBsAimoAJvhJpj_3qKPwuanmTHDhHGpbHk",
+    authDomain: "muabansach-76d2f.firebaseapp.com",
+    projectId: "muabansach-76d2f",
+    storageBucket: "muabansach-76d2f.appspot.com",
+    messagingSenderId: "856425096086",
+    appId: "1:856425096086:web:363d678fd7a7366d2d33b7",
+    measurementId: "G-1ES2B7KCC6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+//   console.log(firebase);
+</script>
+</html>
