@@ -8,6 +8,8 @@
     <title>Mua Bán Sách</title>
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script type="text/javascript" src="./assets/js/chart.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 
 <body>
@@ -28,6 +30,9 @@
                 </li>
                 <li class="nav__item nav__item--order">
                     <a href="">Order</a>
+                </li>
+                <li class="nav__item nav__item--statistical">
+                    <a href="">Statistical</a>
                 </li>
             </ul>
         </div>
@@ -135,7 +140,7 @@
                     </div>
                     <div class="col c-9">
                         <input class="form-control" required type="file" placeholder="Image" id="bookImage">
-                        <img id="imageEdit" style="width: 100px; height: 100px"/>
+                        <img id="imageEdit" style="width: 100px; height: 100px" />
                     </div>
                 </div>
                 <div class="row form__item jc-center">
@@ -308,10 +313,16 @@
         </div>
         <div id="toastOr"></div>
     </div>
+    <div class="thongke">
+        <canvas id="myChart" style="width:100%;height:400px"></canvas>
+    </div>
+        
+
     <script src="./assets/javascript/main.js"></script>
     <script src="./assets/javascript/category.js"></script>
     <script src="./assets/javascript/customer.js"></script>
     <script src="./assets/javascript/order.js"></script>
+    <script src="./assets/javascript/thongke.js"></script>
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
@@ -322,20 +333,21 @@
 <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
 
 <script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyBsAimoAJvhJpj_3qKPwuanmTHDhHGpbHk",
-    authDomain: "muabansach-76d2f.firebaseapp.com",
-    projectId: "muabansach-76d2f",
-    storageBucket: "muabansach-76d2f.appspot.com",
-    messagingSenderId: "856425096086",
-    appId: "1:856425096086:web:363d678fd7a7366d2d33b7",
-    measurementId: "G-1ES2B7KCC6"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBsAimoAJvhJpj_3qKPwuanmTHDhHGpbHk",
+        authDomain: "muabansach-76d2f.firebaseapp.com",
+        projectId: "muabansach-76d2f",
+        storageBucket: "muabansach-76d2f.appspot.com",
+        messagingSenderId: "856425096086",
+        appId: "1:856425096086:web:363d678fd7a7366d2d33b7",
+        measurementId: "G-1ES2B7KCC6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 //   console.log(firebase);
 </script>
+
 </html>

@@ -10,6 +10,10 @@ function displayCate() {
     document.querySelector(".btnSearchCus").style.display = "none";
     document.querySelector(".btnSearchOrder").style.display = "none";
 
+    document.querySelector(".container").style.display = "block";
+    document.querySelector(".thongke").style.display="none";
+    document.querySelector(".search__btn").style.display = "block";
+
     let form = document.querySelector('.content__table');
     form.setAttribute('style', 'display:inline-table');
     let list = document.querySelector('.content__tableDetail')

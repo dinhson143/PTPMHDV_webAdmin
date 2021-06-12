@@ -10,12 +10,12 @@ const SearchKH_API = 'http://localhost:3000/api/searchKH';
 const SearchHD_API = 'http://localhost:3000/api/searchHD';
 
 
-function displayBook() {
-    let list = document.querySelector('.content__tableDetail')
-    list.setAttribute('style', 'display:none');
-    let back = document.querySelector(".btn--BackOrder");
-    back.setAttribute('style', 'display:none');
-}
+// function displayBook() {
+//     let list = document.querySelector('.content__tableDetail')
+//     list.setAttribute('style', 'display:none');
+//     let back = document.querySelector(".btn--BackOrder");
+//     back.setAttribute('style', 'display:none');
+// }
 
 
 
@@ -27,6 +27,11 @@ function start() {
 function displayBook() {
     document.querySelector("#search").style.display = "flex";
     document.querySelector(".btnSearchBooks").style.display = "block";
+
+    document.querySelector(".container").style.display = "block";
+    document.querySelector(".thongke").style.display="none";
+    document.querySelector(".search__btn").style.display = "block";
+
     document.querySelector(".btnSearchCate").style.display = "none";
     document.querySelector(".btnSearchCus").style.display = "none";
     document.querySelector(".btnSearchOrder").style.display = "none";
@@ -36,12 +41,10 @@ btnBook.onclick = function (e) {
     e.preventDefault();
     displayBook();
     start();
-    // alert("book")
     let contenttitle = document.querySelector(".content__title");
     contenttitle.innerHTML = "DANH SÁCH SÁCH"
     document.querySelector(".btn--add").style.display = "block";
     document.querySelector(".btn--add").classList.add("btnThemSach")
-    displayBook();
     var add = document.querySelector(".btnThemSach");
     add.onclick = function () {
         handlerAddBook();

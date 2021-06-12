@@ -10,6 +10,10 @@ function displayOrder() {
     document.querySelector(".btnSearchBooks").style.display = "none";
     document.querySelector(".btnSearchCus").style.display = "none";
     document.querySelector(".btnSearchOrder").style.display = "block";
+
+    document.querySelector(".container").style.display = "block";
+    document.querySelector(".thongke").style.display="none";
+    document.querySelector(".search__btn").style.display = "block";
 }
 var btnOrder = document.querySelector(".nav__item--order")
 btnOrder.onclick = function (e) {
@@ -494,11 +498,12 @@ function handlerEditOrDt(id, bookID) {
     let formOrID = document.querySelector("#orID");
     let formBookID = document.querySelector("#bID");
 
-    // let Quantity = document.querySelector("#quantity");
+    let Quantity = document.querySelector("#quantity");
     let addNew = document.querySelector('#add-newOrDt');
     addNew.value = "Edit";
 
 
+    Quantity.value = 0;
     formOrID.value = id;
     // formBookID.value = bookID;
     document.querySelector("#bID option").value = bookID;
