@@ -398,3 +398,10 @@ html{
     margin: auto;
     display:none;
   }
+
+
+  .nav__item--Logout{
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+  }
