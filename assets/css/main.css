@@ -126,7 +126,7 @@ html{
 {
   text-align: center;
   font-size:30px;
-  color: #000;
+  color: #fff;
   font-weight: 700;
 }
 .search__form
@@ -161,6 +161,7 @@ html{
   border-collapse: collapse;
   width: 100%;
   font-size: 16px;
+  background-color: #ccc;
 }
 #content .content__table td,
 #content .content__table th,
@@ -237,7 +238,7 @@ html{
 {
     font-size: 3.6rem;
     text-align: center;
-    color: #4CAF50;
+    color: rgb(165 236 168);
 }
 
 
@@ -397,6 +398,7 @@ html{
     max-width: 1140px;
     margin: auto;
     display:none;
+    background-color:#fff;
   }
 
 
@@ -404,4 +406,9 @@ html{
     color: #fff;
     font-size: 2rem;
     text-decoration: none;
+  }
+
+  body{
+    z-index: -1;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://toidicodedao.files.wordpress.com/2019/12/photo-1476275466078-4007374efbbe.jpeg?w=672&h=372&crop=1);
   }
